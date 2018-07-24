@@ -3,23 +3,53 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>wp-demo</title>
-</head>
-<script>
-  // !(function (e, t) {
-  //   var n = t.documentElement,
-  //   d = e.devicePixelRatio || 1;
+  <meta name="App-Config" content="fullscreen=yes,useHistoryState=yes,transition=yes" />
+  <meta content=yes name=apple-mobile-web-app-capable />
+  <meta content=yes name=apple-touch-fullscreen />
+  <meta content="telephone=no,email=no" name=format-detection />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      outline: 0;
+      -webkit-tap-highlight-color: transparent
+    }
 
-  //   function i() {
-  //     var e = n.clientWidth / 3.75;
-  //     n.style.fontSize = e + "px"
-  //   } if (function e() { t.body ? t.body.style.fontSize = "16px" : t.addEventListener("DOMContentLoaded", e) }(), i(), e.addEventListener("resize", i), e.addEventListener("pageshow", function (e) { e.persisted && i() }), d >= 2) {
-  //     var o = t.createElement("body"),
-  //     a = t.createElement("div");
-  //     a.style.border = ".5px solid transparent", o.appendChild(a), n.appendChild(o), 1 === a.offsetHeight && n.classList.add("hairlines"), n.removeChild(o)
-  //   }
-  // }(window, document))
+    html {
+      -webkit-text-size-adjust: none;
+      -webkit-font-smoothing: antialiased
+    }
+
+    body,
+    html {
+      height: 100%;
+      background-color: #f4f4f4
+    }
+
+    a {
+      text-decoration: none
+    }
+  </style>
+</head>
+<!-- <script src="./src/assets/js/libs/flexible.js?_inline"></script> -->
+<script>
+  ! function (e, t) {
+    var n = t.documentElement,
+    d = e.devicePixelRatio || 1;
+
+    function i() {
+      var e = n.clientWidth / 3.75;
+      n.style.fontSize = e + "px"
+    }
+    if (function e() { t.body ? t.body.style.fontSize = "16px" : t.addEventListener("DOMContentLoaded", e) }(), i(), e.addEventListener("resize", i), e.addEventListener("pageshow", function (e) { e.persisted && i() }), d >= 2) {
+      var o = t.createElement("body"),
+      a = t.createElement("div");
+      a.style.border = ".5px solid transparent", o.appendChild(a), n.appendChild(o), 1 === a.offsetHeight && n.classList.add("hairlines"), n.removeChild(o)
+    }
+  }(window, document)
 </script>
 
 <body>
