@@ -1,7 +1,5 @@
 <template>
   <div class="hello">
-    <!-- <h1>{{ msg }}</h1> -->
-    <!-- <div class="search">{{ msg }}</div> -->
     <web-search :msg="msg"></web-search>
     <div class="main-container">
       something
@@ -9,22 +7,6 @@
         <li>
           <webPrdCard></webPrdCard>
         </li>
-        <!-- <li>
-          <dl>
-            <dd>
-              <img src="@/assets/image/logo.png" alt="">
-            </dd>
-            <dt>Essential Links</dt>
-          </dl>
-        </li>
-        <li>
-          <dl>
-            <dd>
-              <img src="@/assets/image/logo.png" alt="">
-            </dd>
-            <dt>Essential Links</dt>
-          </dl>
-        </li> -->
       </ul>
     </div>
   </div>

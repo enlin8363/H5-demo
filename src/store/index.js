@@ -1,3 +1,8 @@
+/*
+  * 全局公用数据配置文件
+  * @Author Lin
+*/
+
 import Vuex from 'vuex'
 import Vue from 'vue'
 Vue.use(Vuex)

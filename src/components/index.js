@@ -1,3 +1,7 @@
+/*
+  * 全局公用组件配置文件
+  * @Author Lin
+  */
 import Vue from 'vue'
 import prdCard from './prd-card/' // 产品卡片
 import search from './search/' // 产品卡片
