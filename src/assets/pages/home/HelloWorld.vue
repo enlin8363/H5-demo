@@ -2,10 +2,9 @@
   <div class="hello">
     <web-search :msg="msg"></web-search>
     <div class="main-container">
-      something
       <ul class="clear">
         <li>
-          <webPrdCard></webPrdCard>
+          <router-link :to="{path: 'prdDetail'}"><webPrdCard></webPrdCard></router-link>
         </li>
       </ul>
     </div>
@@ -38,9 +37,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
-}
 ul {
   list-style-type: none;
   padding: 0;
@@ -51,6 +47,7 @@ li {
 }
 a {
   color: #42b983;
+  text-decoration: none;
 }
 .clear{
   clear: both;
@@ -61,7 +58,11 @@ a {
 .main-container ul li{
   float: left;
   width: 48%;
-  padding: 0 .05rem
+  margin: 0 .05rem;
+  border: 1px solid #ddd;
+}
+.main-container ul li:active{
+  background-color: #ddd;
 }
 .main-container ul li img{
   /* float: left; */
