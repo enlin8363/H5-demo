@@ -3,7 +3,7 @@
     <dd>
       <img src="@/assets/image/logo.png" alt="">
     </dd>
-    <dt>PrdCard Components</dt>
+    <dt>{{datas.description}}</dt>
   </dl>
 </template>
 
@@ -14,6 +14,9 @@ export default {
     return {
       msg: 'Vue.js App'
     }
+  },
+  props: {
+    datas: Object
   },
   methods: {
     inctrest () {

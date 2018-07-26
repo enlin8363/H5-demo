@@ -7,12 +7,14 @@ export default {
   name: 'prdCard',
   data () {
     return {
-      msg: 'Vue.js search'
+      // msg: 'Vue.js search'
     }
   },
+  props: ['msg'],
   // props: {
-  //   msg：{
-  //     type:
+  //   ms: {
+  //     type: String,
+  //     default: '100'
   //   }
   // },
   methods: {

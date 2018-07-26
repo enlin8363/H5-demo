@@ -6,6 +6,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 const HelloWorld = r => require.ensure([], () => r(require('@/assets/pages/home/HelloWorld')), 'helloWorld')
 const PrdDetail = r => require.ensure([], () => r(require('@/assets/pages/prd-detail/prd-detail')), 'prdDetail')
+const error = null
 
 Vue.use(Router)
 
@@ -17,9 +18,10 @@ const router = new Router({
       name: 'HelloWorld',
       component: HelloWorld,
       meta: {
+        // 为true时返回不刷新页面
         isBack: false,
         keepAlive: true,
-        title: 'HelloWorld Home'
+        title: 'HomePage'
       }
     },
     {
@@ -29,6 +31,18 @@ const router = new Router({
       meta: {
         title: '产品详情页'
       }
+    }, {// 测试
+      path: '/404',
+      name: '404',
+      component: error,
+      meta: {
+        title: '404'
+      }
+    },
+    // 协议
+    {
+      path: '*',
+      redirect: '/404'
     }
   ],
   // 使用前端路由，当切换到新路由时，想要页面滚到顶部，或者是保持原先的滚动位置，就像重新加载页面那样。

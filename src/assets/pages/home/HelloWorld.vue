@@ -3,8 +3,8 @@
     <web-search :msg="msg"></web-search>
     <div class="main-container">
       <ul class="clear">
-        <li>
-          <router-link :to="{path: 'prdDetail'}"><webPrdCard></webPrdCard></router-link>
+        <li v-for="(item, index) in dataList" :key="index">
+          <router-link :to="{path: 'prdDetail'}"><webPrdCard :datas="item"></webPrdCard></router-link>
         </li>
       </ul>
     </div>
@@ -16,21 +16,36 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
+      dataList: [],
       msg: 'Vue.js App'
     }
+  },
+  mounted () {
+    let url = 'http://api.amez999.com/mobile/user/news/plat/list?page=1&pageSize=10'
+    // let url = 'https://www.baidu.com/s?wd=webpack'
+    let data = {
+      'token': '8e39c536c34f4a3db234e253e204de06',
+      'page': 1,
+      'pageSize': 10
+    }
+    this.common.post(url, data, (res) => {
+      console.log(res)
+      this.dataList = res.data.content
+    }, 'GET')
   },
   methods: {
     inctrest () {
       this.$store.commit('increstCount')
     }
   },
-  computed: {
-    count () {
-      return this.$store.state.count
-    },
-    count1 () {
-      return this.$store.getters.filCount
+  beforeRouteEnter: (to, from, next) => {
+    if (from.name && from.name === 'prdDetail') { // 返回的
+      // 返回详情页返回不刷新页面
+      to.meta.isBack = true
+    } else {
+      to.meta.isBack = false
     }
+    next()
   }
 }
 </script>

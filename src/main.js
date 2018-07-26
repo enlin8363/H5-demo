@@ -5,7 +5,9 @@ import App from './App'
 import router from './router'
 import store from './store'
 import component from './components/index'
+import common from './assets/js/global/common'
 
+Vue.prototype.common = common
 Vue.use(component)
 Vue.config.productionTip = false
 /* eslint-disable no-new */

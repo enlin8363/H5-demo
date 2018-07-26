@@ -3,8 +3,8 @@
   * @Author Lin
   */
 import Vue from 'vue'
-import prdCard from './prd-card/' // 产品卡片
-import search from './search/' // 产品卡片
+import prdCard from './prd-card/prd-card' // 产品卡片
+import search from './search/search' // 产品卡片
 
 let components = [
   {
