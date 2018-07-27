@@ -1,6 +1,8 @@
 <template>
   <div class="hello">
-    <web-search :msg="msg"></web-search>
+    <div class="head-bar">
+      <web-search :msg="msg"></web-search>
+    </div>
     <div class="main-container">
       <ul class="clear">
         <li v-for="(item, index) in dataList" :key="index">
@@ -29,7 +31,7 @@ export default {
       'pageSize': 10
     }
     this.common.post(url, data, (res) => {
-      console.log(res)
+      // console.log(res)
       this.dataList = res.data.content
     }, 'GET')
   },
@@ -67,21 +69,33 @@ a {
 .clear{
   clear: both;
 }
+.head-bar{
+  width: 100%;
+  /* position: sticky; */
+  position: fixed;
+  /* position: absolute; */
+  top: 0;
+  left: 0;
+  z-index: 10;
+  -webkit-overflow-scrolling : touch;
+}
 .main-container{
   width: 3.75rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: .4rem 0 0 .05rem;
+  /* overflow-y : auto; */
 }
 .main-container ul li{
   float: left;
-  width: 48%;
-  margin: 0 .05rem;
+  width: 48.5%;
+  margin: 0 .05rem .05rem 0;
   border: 1px solid #ddd;
+  height: 2.2rem;
+  background: #fff;
 }
 .main-container ul li:active{
   background-color: #ddd;
-}
-.main-container ul li img{
-  /* float: left; */
-  width: 100%;
-  /* padding: 0 .05rem */
 }
 </style>

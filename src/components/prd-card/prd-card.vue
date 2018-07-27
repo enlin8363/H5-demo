@@ -26,5 +26,10 @@ export default {
 }
 </script>
 <style scoped>
-
+  dl{
+    padding: .05rem;
+  }
+  img{
+    width: 100%;
+  }
 </style>

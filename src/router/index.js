@@ -4,7 +4,7 @@
   */
 import Vue from 'vue'
 import Router from 'vue-router'
-const HelloWorld = r => require.ensure([], () => r(require('@/assets/pages/home/HelloWorld')), 'helloWorld')
+const Home = r => require.ensure([], () => r(require('@/assets/pages/home/home')), 'home')
 const PrdDetail = r => require.ensure([], () => r(require('@/assets/pages/prd-detail/prd-detail')), 'prdDetail')
 const error = null
 
@@ -15,8 +15,8 @@ const router = new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld,
+      name: 'home',
+      component: Home,
       meta: {
         // 为true时返回不刷新页面
         isBack: false,
