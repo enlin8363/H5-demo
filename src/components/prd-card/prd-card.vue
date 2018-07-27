@@ -29,6 +29,9 @@ export default {
   dl{
     padding: .05rem;
   }
+  dd{
+    border-bottom: .01rem solid #ddd;
+  }
   img{
     width: 100%;
   }
