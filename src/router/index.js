@@ -5,7 +5,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 const Home = r => require.ensure([], () => r(require('@/assets/pages/home/home')), 'home')
+const PrdList = r => require.ensure([], () => r(require('@/assets/pages/prd-list/prd-list')), 'prdList')
 const PrdDetail = r => require.ensure([], () => r(require('@/assets/pages/prd-detail/prd-detail')), 'prdDetail')
+const GtTest = r => require.ensure([], () => r(require('@/assets/pages/gt-test/gt-test')), 'gtTest')
+const ShowExcel = r => require.ensure([], () => r(require('@/assets/pages/show-excel/show-excel')), 'showExcel')
+const Camera = r => require.ensure([], () => r(require('@/assets/pages/camera/camera')), 'camera')
 const error = null
 
 Vue.use(Router)
@@ -23,13 +27,40 @@ const router = new Router({
         keepAlive: true,
         title: 'HomePage'
       }
-    },
-    {
+    }, {
+      path: '/prdList',
+      name: 'prdList',
+      component: PrdList,
+      meta: {
+        title: '产品列表页'
+      }
+    }, {
       path: '/prdDetail',
       name: 'prdDetail',
       component: PrdDetail,
       meta: {
         title: '产品详情页'
+      }
+    }, {
+      path: '/gtTest',
+      name: 'gtTest',
+      component: GtTest,
+      meta: {
+        title: '极客测试页'
+      }
+    }, {
+      path: '/showExcel',
+      name: 'showExcel',
+      component: ShowExcel,
+      meta: {
+        title: '展示Excel页'
+      }
+    }, {// 调用手机摄像头
+      path: '/camera',
+      name: 'camera',
+      component: Camera,
+      meta: {
+        title: '调用手机摄像头页'
       }
     }, {// 测试
       path: '/404',
@@ -38,9 +69,7 @@ const router = new Router({
       meta: {
         title: '404'
       }
-    },
-    // 协议
-    {
+    }, {
       path: '*',
       redirect: '/404'
     }

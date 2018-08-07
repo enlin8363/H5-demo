@@ -5,9 +5,10 @@
     </div>
     <div class="main-container">
       <ul class="clear">
-        <li v-for="(item, index) in dataList" :key="index">
-          <router-link :to="{path: 'prdDetail'}"><webPrdCard :datas="item"></webPrdCard></router-link>
-        </li>
+        <!-- <li v-for="(item, index) in dataList" :key="index">
+          <router-link :to="{path: item.path}">{{item.name}}</router-link>
+        </li> -->
+        <router-link tag="li" :to="{path: item.path}" v-for="(item, index) in dataList" :key="index">{{item.name}}</router-link>
       </ul>
     </div>
   </div>
@@ -23,17 +24,28 @@ export default {
     }
   },
   mounted () {
-    let url = 'http://api.amez999.com/mobile/user/news/plat/list?page=1&pageSize=10'
-    // let url = 'https://www.baidu.com/s?wd=webpack'
-    let data = {
-      'token': '8e39c536c34f4a3db234e253e204de06',
-      'page': 1,
-      'pageSize': 10
-    }
-    this.common.post(url, data, (res) => {
-      // console.log(res)
-      this.dataList = res.data.content
-    }, 'GET')
+    this.dataList = [
+      {
+        path: '/prdList',
+        name: '产品列表页'
+      },
+      {
+        path: '/prdDetail',
+        name: '产品详情页'
+      },
+      {
+        path: '/gtTest',
+        name: '极客测试页'
+      },
+      {
+        path: '/showExcel',
+        name: '展示Excel页'
+      },
+      {
+        path: '/camera',
+        name: '调用手机摄像头'
+      }
+    ]
   },
   methods: {
     inctrest () {
@@ -59,7 +71,7 @@ ul {
   padding: 0;
 }
 li {
-  display: inline-block;
+  /* display: inline-block; */
   /* margin: 0 10px; */
 }
 a {
@@ -80,19 +92,16 @@ a {
   -webkit-overflow-scrolling : touch;
 }
 .main-container{
-  width: 3.75rem;
-  position: absolute;
+  /* width: 3.75rem; */
+  /* position: absolute;
   top: 0;
-  left: 0;
+  left: 0; */
   padding: .4rem 0 0 .05rem;
   /* overflow-y : auto; */
 }
 .main-container ul li{
-  float: left;
-  width: 48.5%;
-  margin: 0 .05rem .05rem 0;
-  border: 1px solid #ddd;
-  height: 2.2rem;
+  border-bottom: 1px solid #ddd;
+  height: .45rem;
   background: #fff;
 }
 .main-container ul li:active{
